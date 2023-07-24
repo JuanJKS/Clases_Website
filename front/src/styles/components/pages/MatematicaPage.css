@@ -1,0 +1,11 @@
+.section-maths {
+    background: #1f1e2a;
+    color: #eddac5;
+    border-bottom: 5px solid #528ca7;
+    border-top: 5px solid #528ca7;
+}
+
+.section-maths p {
+    line-height: normal;
+    letter-spacing: 1px;
+}

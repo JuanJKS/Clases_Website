@@ -1,0 +1,35 @@
+.container-file {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.file-reverse {
+    flex-direction: row-reverse;
+}
+
+.container-file-img {
+    display: flex;
+    padding: 15px;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-file-img img {
+    width: 100%;
+    border-radius: 15px;
+}
+
+/*.file-reverse .container-file-img img {
+    box-shadow: 8px 7px 5px 0px rgba(82,140,167,0.55);
+}*/
+
+.container-file-text {
+    padding: 15px;
+    text-align: justify;
+}
+
+@media (max-width: 1199px) {
+    .container-file-text {
+        line-height: 170%;
+    }
+}

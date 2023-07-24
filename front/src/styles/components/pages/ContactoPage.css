@@ -1,0 +1,122 @@
+.section-contact {
+    background: #528ca7;
+    color: #1f1e2a;
+    font-weight: 900;
+}
+
+.section-contact h2 {
+    color: whitesmoke;
+}
+
+.section-contact h4 {
+    font-weight: 900;
+}
+
+.container-form-maps {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.container-form {
+    padding: 15px;
+}
+
+#validationTextarea {
+    resize: none;
+    height: 160px !important;
+}
+
+.button-form {
+    background: #1f1e2a;
+    border: none;
+
+
+    position: relative;
+    transition: .7s ease all;
+    overflow: hidden;
+}
+
+.button-form span {
+    position: relative;
+    z-index: 2;
+    transition: .7s ease all;
+}
+
+.button-form::after {
+    content: "";
+    width: 1px;
+    height: 1px;
+    background: none;
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    transition: .7s ease-in-out all;
+    border-radius: 50%;
+    transform-origin: center;
+}
+
+.btn-primary:hover {
+    --bs-btn-hover-bg: #0e1726;
+}
+
+.button-form:hover::after {
+    transform: scale(250);
+    background: #104164;
+}
+
+.sending-message {
+    padding-top: 10px;
+    font-size: 25px;
+}
+
+.container-maps {
+    padding: 15px;
+}
+
+.container-maps iframe {
+    margin-top: 10px;
+}
+
+.container-final-contact {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    font-size: 20px;
+    font-weight: 700;
+    padding-top: 180px;
+    padding-bottom: 29px;
+}
+
+.container-col-final-contact h3 {
+    color: whitesmoke;
+    font-weight: 700;
+}
+
+.container-col-final-contact p {
+    font-weight: 900;
+}
+
+.container-final-contact .div-quadrants-icons {
+    transition-property: all;
+    transition-duration: 0.99999999999s;
+    color: #1f1e2a;
+}
+
+.container-col-final-contact:hover .div-quadrants-icons {
+    transform: rotate3d(0, 1, 0, 180deg);
+    transition-property: all;
+    transition-duration: 0.9999999999s;
+}
+
+
+@media (max-width: 1199px) {
+    .container-final-contact {
+        padding: 0;
+        font-size: 18px;
+    }
+
+    .container-col-final-contact {
+        padding: 10px 0;
+    }
+}

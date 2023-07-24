@@ -1,0 +1,372 @@
+/*ESTILOS GENERALES*/
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  color: black;
+  font-family: 'Nunito', sans-serif;
+  font-size: 18px;
+  line-height: 20px;
+  background-color: #E8E9EB;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+
+
+/*ESTILOS LOGIN*/
+
+.login {
+  width: 23%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.container-logo-login {
+  display: flex;
+  align-items: center;
+}
+
+.container-logo-login h1 {
+  color: #0e1726;
+}
+
+.login form {
+  margin-left: 20px;
+  width: 405px;
+}
+
+.login form label {
+  color: #0e1726;
+  font-weight: bold;
+}
+
+.login form button {
+  background-color: #0e1726;
+  width: 100%;
+  height: 43px;
+  position: relative;
+  transition: .3s ease all;
+  overflow: hidden;
+  border: none;
+}
+
+.login form button span {
+  position: relative;
+  z-index: 2;
+  transition: .3s ease all;
+}
+
+.login form button::after {
+  content: "";
+  width: 1px;
+  height: 1px;
+  background: none;
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  transition: .7s ease-in-out all;
+  border-radius: 50%;
+  transform-origin: center;
+}
+
+.login form button:hover::after {
+  transform: scale(700);
+  background: #2F5DBE;
+}
+
+.login p {
+  color: red;
+  font-weight: bold;
+  padding-top: 20px;
+}
+
+
+/*ESTILOS GENERALES LAYOUT*/
+
+.container-header {
+  width: 100%;
+  border-bottom: 1px solid grey;
+  background: #0e1726;
+  padding-left: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.title-logo {
+  font-size: 60px;
+  font-weight: 900;
+  color: whitesmoke;
+  margin-right: 10px;
+}
+
+.img-logo {
+  width: 100%;
+  max-width: 100px;
+  max-height: 100px;
+}
+
+.container-header a {
+  margin-right: 15px;
+  background-color: #2F5DBE;
+  border: none;
+  border-radius: 10px;
+  height: 40px;
+  display: inline-flex;
+  overflow: hidden;
+  max-width: 43px;
+  -webkit-transition: max-width 0.5s;
+  transition: max-width 0.5s;
+}
+
+.container-header a .text {
+  white-space: nowrap;
+  padding-right: 10px;
+  position: relative;
+  left: -200px;
+  transition: .5s ease all;
+}
+
+.container-header a i {
+  display: flex;
+  align-items: center;
+  position: relative;
+  left: -118px;
+  transition: .5s ease all;
+}
+
+.container-header a:hover {
+  background-color: #2F5DBE !important;
+  max-width: 300px;
+  transition: .5s ease all;
+}
+
+.container-header a:hover .text {
+  left: 0;
+  transition: .5s ease-in-out all;
+}
+
+.container-header a:hover i {
+  left: 0;
+}
+
+.footer-page {
+  background-color: #2F5DBE;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80px;
+  color: whitesmoke;
+  margin-top: auto;
+}
+
+
+@media (max-width: 991px) {
+  .container-header {
+      padding-left: 0;
+      padding-right: 0;
+  }
+
+  .container-header img {
+    padding-left: 10px;
+  }
+}
+
+
+/*ESTILOS ADMIN*/
+
+.total-container {
+  padding: 0 10px;
+  margin-top: 60px;
+}
+
+.container-title-button {
+  margin-bottom: 20px;
+}
+
+.title {
+  font-size: 30px;
+  font-weight: bold;
+  font-style: italic;
+  color: black;
+}
+
+.new {
+  background-color: #0e1726;
+  border: none;
+}
+
+.btn-primary:hover {
+  --bs-btn-hover-bg: #0e1726;
+}
+
+.new:hover {
+  background: linear-gradient(180deg, #2F5DBE 100%, #2F5DBE 100%);
+  opacity: 0.6;
+}
+
+.new i {
+  padding-right: 10px;
+}
+
+.table>:not(caption)>*>* {
+  border-bottom-width: 0px;
+}
+
+.table-professional {
+  background-color: #0e1726;
+  color: whitesmoke;
+  border-bottom: 10px solid #E8E9EB;
+}
+
+tbody {
+  font-weight: bold;
+  background-color: #faf9f8;
+}
+
+.table-rows {
+  border-bottom: 10px solid #E8E9EB;
+}
+
+.container-icons {
+  display: flex;
+}
+
+.container-icons a {
+  background-color: transparent;
+  color: grey;
+  border: none;
+}
+
+.container-icons a:hover {
+  background-color: transparent !important;
+  color: black !important;
+}
+
+
+/*ESTILOS AGREGAR/EDITAR*/
+
+.container-form-add-edit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto auto;
+}
+
+.container-title-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container-title-icon h4 {
+  font-weight: bold;
+  font-size: 40px;
+  color: #2F5DBE;
+}
+
+.container-title-icon i {
+  font-size: 60px;
+  margin-bottom: 15px;
+  margin-left: 15px;
+  color: #2F5DBE;
+}
+
+.container-form-add-edit label {
+  font-size: 25px;
+  margin-bottom: 10px;
+  font-weight: bold;
+  font-style: italic;
+  color: #0e1726;
+}
+
+.container-form-add-edit form textarea {
+  resize: none;
+  height: 130px;
+  margin: 0;
+}
+
+.container-textarea-form {
+  padding: 0;
+}
+
+.container-input-form-autor {
+  padding-left: 0;
+}
+
+.container-input-form-zona {
+  padding-right: 0;
+}
+
+.container-form-add-edit button {
+  background-color: #0e1726;
+  width: 100%;
+  height: 43px;
+  position: relative;
+  transition: .3s ease all;
+  overflow: hidden;
+  border: none;
+}
+
+.container-form-add-edit form button span {
+  position: relative;
+  z-index: 2;
+  transition: .3s ease all;
+}
+
+.container-form-add-edit form button::after {
+  content: "";
+  width: 1px;
+  height: 1px;
+  background: none;
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  transition: .7s ease-in-out all;
+  border-radius: 50%;
+  transform-origin: center;
+}
+
+.container-form-add-edit form button:hover::after {
+  transform: scale(700);
+  background: #2F5DBE;
+}
+
+.container-form-add-edit p {
+  color: red;
+  font-weight: bold;
+  padding-top: 20px;
+  text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

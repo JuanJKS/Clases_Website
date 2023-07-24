@@ -1,0 +1,33 @@
+.quadrants-home {
+    display: flex;
+    gap: 5px;
+}
+
+.div-quadrants-icons {
+    color: #528ca7;
+    display: flex;
+    justify-content: center;
+    font-size: 40px;
+    transition-property: all;
+    transition-duration: 0.5s;
+}
+
+.div-quadrants-icons:hover {
+    transform: translate(1px,7px);
+    transition-property: all;
+    transition-duration: 0.5s;
+}
+
+.div-quadrants-text {
+    text-align: justify;
+}
+
+.div-quadrants-text h5 {
+    font-weight: 900;
+}
+
+.div-quadrants-text p {
+    font-weight: bold;
+    font-style: italic;
+}
+

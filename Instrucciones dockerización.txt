@@ -1,0 +1,11 @@
+DESARROLLO:
+1- docker compose -f docker-compose-dev.yml up -d
+2- Importar bdd en contenedor con (docker exec -i database sh -c 'exec mysql -uroot -p"$MYSQL_ROOT_PASSWORD" clasesparticulares' < clasesparticulares.sql)
+
+PRODUCCIÓN (PRIMERA VEZ QUE DESPLIEGO):
+1- Hacer un clon del repo remoto en el VPS mediante SSH
+2- Levantar el compose con docker compose -f docker-compose-prod.yml up -d
+3- Correr npm install dentro de los container de frontend y de backend mediante terminales interactivas (docker exec -it frontend sh y docker exec -it backend sh)
+4- Importar bdd en contenedor con (docker exec -i database sh -c 'exec mysql -uroot -p"$MYSQL_ROOT_PASSWORD" clasesparticulares' < clasesparticulares.sql)
+
+PRODUCCIÓN (CUANDO CAMBIO ALGO EN DESARROLLO):

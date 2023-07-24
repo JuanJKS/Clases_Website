@@ -1,0 +1,15 @@
+.container-nav-logo {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid grey;
+    background: #104164;
+}
+
+@media (max-width: 991px) {
+    .container-nav {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}

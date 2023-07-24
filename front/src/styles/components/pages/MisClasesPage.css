@@ -1,0 +1,27 @@
+.section-myclasses {
+    background: #eddac5;
+}
+
+.section-myclasses h2 {
+    color: #1f1e2a;
+}
+
+.container-cards {
+    margin-top: 0;
+}
+
+.secondary-title {
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+.loading-message {
+    font-size: 30px;
+    font-weight: 900;
+    color: #1f1e2a;
+}
+
+.carousel-indicators {
+    margin-bottom: 0;
+}
+

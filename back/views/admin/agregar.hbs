@@ -1,0 +1,22 @@
+<div class='container-lg container-form-add-edit'>
+    <div class='col-6'>
+        <div class='container-title-icon'>
+            <h4>Agregar un testimonio</h4><i class='fa-solid fa-circle-plus'></i>
+        </div>
+        <form action='/admin/opiniones/agregar' method='post' class='row g-3'>
+            <div class='col-12 container-textarea-form'>
+                <textarea type='text' class='form-control' placeholder='Opinión' name='opinion'></textarea>
+            </div>
+            <div class='col-6 container-input-form-autor'>
+                <input type='text' class='form-control' placeholder='Autor' name='autor'>
+            </div>
+            <div class='col-6 container-input-form-zona'>
+                <input type='text' class='form-control' placeholder='Zona' name='zona'>
+            </div>
+            <button type='submit' class='btn btn-primary'><span>Guardar</span></button>
+        </form>
+        {{#if error}}
+            <p>{{message}}</p>
+        {{/if}}
+    </div>
+</div>

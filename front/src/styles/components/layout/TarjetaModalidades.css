@@ -1,0 +1,23 @@
+.card img {
+    width: 100%;
+}
+
+.card-body {
+    color: #eddac5;
+}
+
+.card-body.card-modalities {
+    background: #1f1e2a;
+}
+
+.card-body.card-modalities h5 {
+    font-weight: bold;
+    font-size: 25px;
+    color: whitesmoke;
+}
+
+.card-modalities p {
+    text-align: justify;
+    color: #eddac5;
+}
+

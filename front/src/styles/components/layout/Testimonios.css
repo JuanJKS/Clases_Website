@@ -1,0 +1,26 @@
+.testimony-carrousel {
+    margin: 0 auto;
+    max-width: 83%;
+    background: #1f1e2a;
+}
+
+.card-header {
+    color: #eddac5;
+    font-size: 20px;
+    font-weight: 900;
+    font-style: italic;
+    border-bottom: 1px solid #eddac5;
+}
+
+.blockquote-footer {
+    margin-top: 5px;
+    margin-bottom: 5px !important;
+    color: #eddac5;
+    font-weight: 900;
+}
+
+.testimony-carrousel p {
+    font-weight: 900;
+    font-style: italic;
+    color: whitesmoke;
+}

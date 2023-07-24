@@ -1,0 +1,10 @@
+.section-physical {
+    background: #1f1e2a;
+    color: #eddac5;
+    border-bottom: 5px solid #528ca7;
+}
+
+.section-physical p {
+    line-height: normal;
+    letter-spacing: 1px;
+}

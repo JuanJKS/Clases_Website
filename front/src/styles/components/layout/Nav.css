@@ -1,0 +1,127 @@
+.navbar {
+    height: 65px;
+    background-color: transparent !important;
+}
+
+.nav-site {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.navbar-brand {
+    padding: 0;
+    font-size: 60px;
+    max-width: 300px;
+    max-height: 65px;
+}
+
+.container-personal_logo {
+    display: flex;
+    align-items: center;
+    margin-right: 50px;
+}
+
+.container-personal_logo h2 {
+    font-size: 45px;
+    font-weight: 900;
+    padding-top: 10px;
+}
+
+.container-personal_logo .span-1 {
+    color: #a9edeb;
+}
+
+.container-personal_logo .span-2 {
+    color: whitesmoke;
+}
+
+.container-personal_logo .react-icon {
+    color: #a9edeb;
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+}
+
+.collapse {
+    justify-content: center;
+}
+
+.navbar-nav li {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.navbar-nav li a {
+    margin: 10px;
+    color: whitesmoke;
+}
+
+.navbar-nav li a:hover {
+    color: #a9edeb;
+}
+
+.nav-active {
+    border: 2px solid whitesmoke;
+    border-radius: 5px;
+    color: #a9edeb !important;
+}
+
+
+@media (max-width: 991px) {
+    .navbar {
+        padding: 0;
+    }
+
+    .nav-site {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .navbar-brand {
+        padding-left: 10px;
+    }
+
+    .navbar-toggler {
+        margin-right: 100px;
+        border-color: whitesmoke;
+        --bs-navbar-toggler-focus-width: 0;
+    }
+
+    .nav-site .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28245, 245, 245, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    }
+
+    .navbar-collapse {
+        background: #104164; 
+        filter: opacity(95%);
+    }
+
+    .nav-active {
+        border: none;
+        border-radius: 5px;
+        color: #104164 !important;
+        background: linear-gradient(180deg,#a9edeb 0%, #a9edeb 90%);
+    }
+}
+
+
+@media (max-width: 515px) {
+    .navbar-brand {
+        margin-right: 0;
+    } 
+
+    .navbar-brand h2 {
+        font-size: 40px;
+    }
+
+    .navbar-toggler {
+        margin-right: 10px;
+    }
+}
+
+
+@media (max-width: 458px) {
+    .navbar-toggler {
+        margin-left: 10px;
+    } 
+}
