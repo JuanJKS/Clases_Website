@@ -9,3 +9,4 @@ PRODUCCIÓN (PRIMERA VEZ QUE DESPLIEGO):
 4- Importar bdd en contenedor con (docker exec -i database sh -c 'exec mysql -uroot -p"$MYSQL_ROOT_PASSWORD" clasesparticulares' < clasesparticulares.sql)
 
 PRODUCCIÓN (CUANDO CAMBIO ALGO EN DESARROLLO):
+Probando cambio en este txt por Github
