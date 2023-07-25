@@ -17,7 +17,9 @@ services:
       - ./back:/app
     networks:
       - default
-      - nginx-proxy-manager_default               
+      - nginx-proxy-manager_default
+    tty: true
+    command: bash -c
 
   database:
     container_name: proyecto-clases_database
@@ -46,6 +48,8 @@ services:
     networks:
       - default
       - nginx-proxy-manager_default
+    tty: true
+    command: bash -c
 
 volumes:
   app_database:
