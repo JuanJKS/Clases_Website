@@ -1,0 +1,55 @@
+version: "3.8"
+services:
+  backend:
+    container_name: proyecto-clases_backend
+    build:
+      context: .
+      dockerfile: back/Dockerfile.prod
+    environment:
+      - MYSQL_HOST=database
+      - MYSQL_DB_NAME=clasesparticulares
+      - MYSQL_USER=root
+      - MYSQL_PASSWORD=#$#2Jshdw3@@3ajs###sssSSDdssa
+    restart: unless-stopped
+    depends_on: 
+      - database
+    volumes:
+      - ./back:/app
+    networks:
+      - default
+      - nginx-proxy-manager_default               
+
+  database:
+    container_name: proyecto-clases_database
+    image: mysql:8
+    restart: unless-stopped
+    environment:
+      - MYSQL_ROOT_PASSWORD=#$#2Jshdw3@@3ajs###sssSSDdssa
+      - MYSQL_DATABASE=clasesparticulares
+    volumes:
+      - app_database:/var/lib/mysql
+
+  frontend:
+    container_name: proyecto-clases_frontend
+    build:
+      context: .
+      dockerfile: front/Dockerfile.prod
+    environment:
+      - WATCHPACK_POLLING=true
+      - REACT_APP_URL_API=http://adminprofejuan.tech/api/opiniones
+      - REACT_APP_EMAILJS_SERVICEID=service_sxi0tqs
+      - REACT_APP_EMAILJS_TEMPLATEID=template_8blwdpd
+      - REACT_APP_EMAILJS_APIPUBKEY=EigCH_bWKVIFtYyAq
+    restart: unless-stopped
+    volumes:
+      - ./front:/app
+    networks:
+      - default
+      - nginx-proxy-manager_default
+
+volumes:
+  app_database:
+
+networks:
+  nginx-proxy-manager_default:
+    external: true
