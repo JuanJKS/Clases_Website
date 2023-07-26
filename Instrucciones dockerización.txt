@@ -10,8 +10,11 @@ PRODUCCIÓN (PRIMERA VEZ QUE DESPLIEGO):
     - scp /home/juan/Programación/workspace/Clases_Website/front/node_modules.zip juan@191.101.71.182:/home/juan/Clases_Website/front
     - scp /home/juan/Programación/workspace/Clases_Website/back/node_modules.zip juan@191.101.71.182:/home/juan/Clases_Website/back
 3- Unzipear ambas carpetas y eliminar ambos archivos .zip (unzip node_modules.zip y rm node_modules.zip)
-4- Levantar el compose con docker compose -f docker-compose-prod.yml up -d
-5- Importar bdd en contenedor con:
+4- Otorgar permisos para nodemon (back) y react-scripts (front):
+    - Posicionado en la carpeta de back en terminal tirar chmod +x node_modules/.bin/nodemon
+    - Posicionado en la carpeta de front en terminal tirar chmod +x node_modules/.bin/react-scripts
+5- Levantar el compose con docker compose -f docker-compose-prod.yml up -d
+6- Importar bdd en contenedor con:
     - docker exec -it proyecto-clases_database sh
     - mysql -uroot -p clasesparticulares < clasesparticulares.sql
 
