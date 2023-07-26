@@ -28,6 +28,7 @@ services:
       - MYSQL_DATABASE=clasesparticulares
     volumes:
       - app_database:/var/lib/mysql
+      - ./clasesparticulares.sql:/clasesparticulares.sql
 
   frontend:
     container_name: proyecto-clases_frontend

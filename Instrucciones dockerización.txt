@@ -1,12 +1,22 @@
 DESARROLLO:
 1- docker compose -f docker-compose-dev.yml up -d
-2- Importar bdd en contenedor con (docker exec -i database sh -c 'exec mysql -uroot -p"$MYSQL_ROOT_PASSWORD" clasesparticulares' < clasesparticulares.sql)
+2- Importar bdd en contenedor con:
+    - docker exec -it proyecto-clases_database sh
+    - mysql -uroot -p clasesparticulares < clasesparticulares.sql
 
 PRODUCCIÓN (PRIMERA VEZ QUE DESPLIEGO):
-1- Hacer un clon del repo remoto en el VPS mediante SSH
-2- Levantar el compose con docker compose -f docker-compose-prod.yml up -d
-3- Correr npm install dentro de los container de frontend y de backend mediante terminales interactivas (docker exec -it frontend sh y docker exec -it backend sh)
-4- Importar bdd en contenedor con (docker exec -i database sh -c 'exec mysql -uroot -p"$MYSQL_ROOT_PASSWORD" clasesparticulares' < clasesparticulares.sql)
+1- Hacer un clon del repo remoto en el VPS mediante SSH (git clone SSH_URL)
+2- Mandar zipeados los node_modules de front y back con comando scp:
+    - scp /home/juan/Programación/workspace/Clases_Website/front/node_modules.zip juan@191.101.71.182:/home/juan/Clases_Website/front
+    - scp /home/juan/Programación/workspace/Clases_Website/back/node_modules.zip juan@191.101.71.182:/home/juan/Clases_Website/back
+3- Unzipear ambas carpetas y eliminar ambos archivos .zip (unzip node_modules.zip y rm node_modules.zip)
+4- Levantar el compose con docker compose -f docker-compose-prod.yml up -d
+5- Importar bdd en contenedor con:
+    - docker exec -it proyecto-clases_database sh
+    - mysql -uroot -p clasesparticulares < clasesparticulares.sql
 
 PRODUCCIÓN (CUANDO CAMBIO ALGO EN DESARROLLO):
 Probando cambio en este txt por Github
+
+
+
