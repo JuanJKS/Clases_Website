@@ -37,7 +37,7 @@ services:
       dockerfile: front/Dockerfile.prod
     environment:
       - WATCHPACK_POLLING=true
-      - REACT_APP_URL_API=http://adminprofejuan.tech/api/opiniones
+      - REACT_APP_URL_API=https://adminprofejuan.tech/api/opiniones
       - REACT_APP_EMAILJS_SERVICEID=service_sxi0tqs
       - REACT_APP_EMAILJS_TEMPLATEID=template_8blwdpd
       - REACT_APP_EMAILJS_APIPUBKEY=EigCH_bWKVIFtYyAq
