@@ -19,7 +19,12 @@ PRODUCCIÓN (PRIMERA VEZ QUE DESPLIEGO):
     - mysql -uroot -p clasesparticulares < clasesparticulares.sql
 
 PRODUCCIÓN (CUANDO CAMBIO ALGO EN DESARROLLO):
-Probando cambio en este txt por Github
+1- Pushear los cambios al repo remoto en Github
+2- Posicionarme en la carpeta del proyecto y frenar los containers en cuestión (docker stop CONTAINER_NAME)
+3- git pull para traerme los cambios del repo remoto (si el cambio incluye la instalación de nueva dependencia npm, tengo que volver a mandar zipeados los node_modules en cuestión con comando scp, eliminar la carpeta node_modules actual, unzipear los que mandé mediante comando scp y eliminar el archivo .zip en cuestión)
+4- Levantar nuevamente los containers en cuestión:
+    - Si el cambio involucra modificaciones en el compose, levantar con docker compose -f docker-compose-prod.yml up -d (también puede servir haber hecho un down previamente en lugar de stop)
+    - Si el cambio no involucra modificaciones en el compose, levantar con docker start CONTAINER_NAME  	
 
 
 
