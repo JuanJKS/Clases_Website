@@ -1,4 +1,4 @@
 back/node_modules
+back/Dockerfile.dev
 front/node_modules
-back/node_modules.zip
-front/node_modules.zip
+front/Dockerfile.dev

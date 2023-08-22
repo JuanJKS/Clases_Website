@@ -2,6 +2,17 @@ FROM node:18.6-alpine
 
 WORKDIR /app
 
+COPY ./back/bin /app/bin
+COPY ./back/models /app/models
+COPY ./back/public /app/public
+COPY ./back/routes /app/routes
+COPY ./back/views /app/views
+COPY ./back/app.js /app
+COPY ./back/.env /app
+COPY ./back/package*.json /app
+
+RUN npm install 
+
 EXPOSE 3000
 
 CMD [ "npm", "start" ]

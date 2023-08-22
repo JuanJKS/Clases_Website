@@ -13,8 +13,6 @@ services:
     restart: unless-stopped
     depends_on: 
       - database
-    volumes:
-      - ./back:/app
     networks:
       - default
       - nginx-proxy-manager_default
@@ -36,14 +34,11 @@ services:
       context: .
       dockerfile: front/Dockerfile.prod
     environment:
-      - WATCHPACK_POLLING=true
       - REACT_APP_URL_API=https://adminprofejuan.tech/api/opiniones
       - REACT_APP_EMAILJS_SERVICEID=service_sxi0tqs
       - REACT_APP_EMAILJS_TEMPLATEID=template_8blwdpd
       - REACT_APP_EMAILJS_APIPUBKEY=EigCH_bWKVIFtYyAq
     restart: unless-stopped
-    volumes:
-      - ./front:/app
     networks:
       - default
       - nginx-proxy-manager_default
