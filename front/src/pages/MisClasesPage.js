@@ -14,9 +14,7 @@ const MisClasesPage = (props) => {
     useEffect(() => {
         const cargarOpiniones = async () => {
             setLoading(true);
-            /*const response = await axios.get('http://191.101.71.182:4000/api/opiniones');*/
-            /*const response = await axios.get('http://localhost:4000/api/opiniones');*/
-            const response = await axios.get(process.env.REACT_APP_URL_API);
+            const response = await axios.get(process.env.REACT_APP_URL_API || 'https://adminprofejuan.tech/api/opiniones');
             setOpiniones(response.data);
             setLoading(false);
         };

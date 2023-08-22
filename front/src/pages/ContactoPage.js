@@ -18,9 +18,9 @@ const ContactoPage = (props) => {
         e.preventDefault();
         setMsg('');
         
-        const serviceId = process.env.REACT_APP_EMAILJS_SERVICEID;
-        const templateId = process.env.REACT_APP_EMAILJS_TEMPLATEID;
-        const apiKey = process.env.REACT_APP_EMAILJS_APIPUBKEY;
+        const serviceId = 'service_sxi0tqs';
+        const templateId = 'template_8blwdpd';
+        const apiKey = 'EigCH_bWKVIFtYyAq';
 
         try {
             setSending(true);
