@@ -10,6 +10,25 @@
     </div>
     {{! FIN FILA 1 }}
 
+    {{! MODAL CONFIRMACIÓN }}
+    <div class="modal fade" id="confirmarEliminarModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Confirmar Eliminación</h5>
+                </div>
+                <div class="modal-body">
+                    ¿Estás seguro de que deseas eliminar este testimonio?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" id="cancelarEliminarBtn" data-dismiss="modal"><span>Cancelar</span></button>
+                    <a type="button" class="btn btn-danger" id="confirmarEliminarBtn"><span>Eliminar</span></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{! FIN MODAL CONFIRMACIÓN }}
+
     {{! FILA 2 }}
     <div class='row'>
         <div class='col'>
@@ -28,7 +47,7 @@
                             <td>{{opinion}}</td>
                             <td class='container-icons'>
                                 <a class='btn btn-secondary' href='/admin/opiniones/modificar/{{id_op}}'><i class='fa-regular fa-pen-to-square' aria-hidden='true'></i></a>
-                                <a class='btn btn-secondary' href='/admin/opiniones/eliminar/{{id_op}}'><i class='fa-regular fa-trash-can' aria-hidden='true'></i></a>
+                                <a class='btn btn-secondary'><i onclick='showModal({{id_op}})' class='fa-regular fa-trash-can' aria-hidden='true'></i></a>
                             </td>
                         </tr>
                     {{/each}}
@@ -39,3 +58,27 @@
     {{! FIN FILA 2 }}
 
 </div>
+
+<script>
+    const hideModal = () => {
+        const modal = document.getElementById('confirmarEliminarModal');
+        modal.classList.remove('show');
+        modal.style.display = 'none';
+        modal.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('modal-open');
+    }
+
+    const showModal = (opinionId) => {
+        const modal = document.getElementById('confirmarEliminarModal');
+        modal.classList.add('show');
+        modal.style.display = 'block';
+        modal.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('modal-open');
+
+        const cancelarModal = document.getElementById('cancelarEliminarBtn');
+        const confirmarEliminarBtn = document.getElementById('confirmarEliminarBtn');
+        confirmarEliminarBtn.setAttribute('href', `/admin/opiniones/eliminar/${opinionId}`);
+        confirmarEliminarBtn.addEventListener('click', hideModal);
+        cancelarModal.addEventListener('click', hideModal);
+    }
+</script>

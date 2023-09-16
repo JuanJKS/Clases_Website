@@ -260,6 +260,24 @@ tbody {
 }
 
 
+/*ESTILOS MODAL DE ELIMINACIÓN*/
+
+#confirmarEliminarModal {
+  .modal-content {
+    background-color: #faf9f8;
+
+    #confirmarEliminarBtn {
+      background-color: #2F5DBE;
+      border-color: #2F5DBE;
+      
+      &:hover {
+        background-color: #0e1726;
+      }
+    }
+  }
+} 
+
+
 /*ESTILOS AGREGAR/EDITAR*/
 
 .container-form-add-edit {
