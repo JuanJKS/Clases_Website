@@ -31,10 +31,10 @@ router.get('/manage/:id', async (req, res, next) => {
 
 /*MANEJA EL AGREGADO DE UNA NUEVA OPINIÓN O LA MODIFICACIÓN DE UNA YA EXISTENTE*/
 router.post('/manage', async (req, res, next) => {
-  try {
-    const id = req.body.id;
-    let opinion;
+  const id = req.body.id;
+  let opinion;
 
+  try {
     if (id) {
       opinion = await opinionesModel.getOpinionById(id);
     }
@@ -42,7 +42,7 @@ router.post('/manage', async (req, res, next) => {
     if (req.body.opinion == '' || req.body.autor == '' || req.body.zona == '') {
       res.render('admin/manage', {
         layout: 'admin/layout',
-        opinion: id ? opinion : null,
+        opinion: opinion,
         error: true,
         message: 'Todos los campos son requeridos'
       });
@@ -50,6 +50,7 @@ router.post('/manage', async (req, res, next) => {
     }
 
     if (id) {
+      delete req.body.id;
       await opinionesModel.modificarOpinionById(req.body, id);
       res.redirect('/admin/opiniones');
     } else {
@@ -60,7 +61,7 @@ router.post('/manage', async (req, res, next) => {
       console.log(error);
       res.render('admin/manage', {
         layout: 'admin/layout',
-        opinion: id ? opinion : null,
+        opinion: opinion,
         error: true,
         message: id ? 'No se modificó el testimonio' : 'No se cargó el testimonio'
       })
