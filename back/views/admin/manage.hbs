@@ -1,0 +1,55 @@
+<div class='container-lg container-form-add-edit'>
+    <div class='col-6'>
+        <div class='container-title-icon'>
+            {{#if opinion}}
+                <h4>Modificar testimonio</h4><i class='fa-solid fa-square-pen'></i>
+            {{else}}
+                <h4>Agregar testimonio</h4><i class='fa-solid fa-circle-plus'></i>
+            {{/if}}
+        </div>
+        <form action='/admin/opiniones/manage' method='post' class='row g-3'>
+            {{#if opinion}}
+                <input type='hidden' value='{{opinion.id_op}}' name='id'>
+            {{/if}}
+            <div class='col-12 container-textarea-form'>
+                <label for=''>Opinión</label>
+                {{#if opinion}}
+                    <textarea type='text' class='form-control' name='opinion'>{{opinion.opinion}}</textarea>
+                {{else}}
+                    <textarea type='text' class='form-control' placeholder='Opinión' name='opinion'></textarea>
+                {{/if}}
+            </div>
+            <div class='col-6 container-input-form-autor'>
+                <label for=''>Autor</label>
+                {{#if opinion}}
+                    <input type='text' class='form-control' name='autor' value='{{opinion.autor}}'>
+                {{else}}
+                    <input type='text' class='form-control' placeholder='Autor' name='autor'>
+                {{/if}}
+            </div>
+            <div class='col-6 container-input-form-zona'>
+                <label for=''>Zona</label>
+                {{#if opinion}}
+                    <input type='text' class='form-control' name='zona' value='{{opinion.zona}}'>
+                {{else}}
+                    <input type='text' class='form-control' placeholder='Zona' name='zona'>
+                {{/if}}
+            </div>
+            <div class='final-buttons-form'>
+                <a href='/admin/opiniones' class='btn btn-primary'><span><i class='fas fa-arrow-left'></i></span></a>
+                <button type='submit' class='btn btn-primary'>
+                    <span>
+                        {{#if opinion}}
+                            Modificar
+                        {{else}}
+                            Guardar
+                        {{/if}}
+                    </span>
+                </button>
+            </div>
+        </form>
+        {{#if error}}
+            <p>{{message}}</p>
+        {{/if}}
+    </div>
+</div>

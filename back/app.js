@@ -1,20 +1,19 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
-var cors = require('cors');
+const createError = require('http-errors');
+const express = require('express');
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const logger = require('morgan');
+const cors = require('cors');
 
 require('dotenv').config();
-var session = require('express-session');
+const session = require('express-session');
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-var loginRouter = require('./routes/admin/login');
-var opinionesRouter = require('./routes/admin/opiniones');
-var apiRouter = require('./routes/api');
+const indexRouter = require('./routes/index');
+const loginRouter = require('./routes/admin/login');
+const opinionesRouter = require('./routes/admin/opiniones');
+const apiRouter = require('./routes/api');
 
-var app = express();
+const app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -33,7 +32,7 @@ app.use(session({
   saveUninitialized: true
 }));
 
-secured = async (req, res, next) => {
+const secured = async (req, res, next) => {
   try {
     if (req.session.id_usuario) {
       next();
@@ -46,18 +45,17 @@ secured = async (req, res, next) => {
 }
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
 app.use('/admin/login', loginRouter);
 app.use('/admin/opiniones', secured, opinionesRouter);
 app.use('/api', cors(), apiRouter);
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
+app.use((req, res, next) => {
   next(createError(404));
 });
 
 // error handler
-app.use(function(err, req, res, next) {
+app.use((err, req, res, next) => {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};

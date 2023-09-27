@@ -332,9 +332,51 @@ tbody {
   padding-right: 0;
 }
 
+.container-form-add-edit .final-buttons-form {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.container-form-add-edit a {
+  background-color: #0e1726;
+  width: 13%;
+  height: 43px;
+  position: relative;
+  transition: .3s ease all;
+  overflow: hidden;
+  border: none;
+}
+
+.container-form-add-edit form a span {
+  position: relative;
+  z-index: 2;
+  transition: .3s ease all;
+}
+
+.container-form-add-edit form a::after {
+  content: "";
+  width: 1px;
+  height: 1px;
+  background: none;
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  transition: .7s ease-in-out all;
+  border-radius: 50%;
+  transform-origin: center;
+}
+
+.container-form-add-edit form a:hover::after {
+  transform: scale(100);
+  background: #2F5DBE;
+}
+
 .container-form-add-edit button {
   background-color: #0e1726;
-  width: 100%;
+  width: 85%;
   height: 43px;
   position: relative;
   transition: .3s ease all;

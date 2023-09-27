@@ -1,15 +1,14 @@
-var express = require('express');
-var router = express.Router();
-var usuariosModel = require('./../../models/usuariosModel');
+const express = require('express');
+const router = express.Router();
+const usuariosModel = require('./../../models/usuariosModel');
 
-/* GET login page. */
-router.get('/', function(req, res, next) {
+router.get('/', (req, res, next) => {
   res.render('admin/login', {
     layout: 'admin/layout2'
   });
 });
 
-router.get('/logout', function (req, res, next) {
+router.get('/logout', (req, res, next) => {
   req.session.destroy();
   res.render('admin/login', {
     layout: 'admin/layout2'
@@ -18,15 +17,13 @@ router.get('/logout', function (req, res, next) {
 
 router.post('/', async (req, res, next) => {
   try {
-    var usuario = req.body.usuario;
-    var password = req.body.password;
-
-    var data = await usuariosModel.getUserByUsernameAndPassword(usuario, password);
+    const usuario = req.body.usuario;
+    const password = req.body.password;
+    const data = await usuariosModel.getUserByUsernameAndPassword(usuario, password);
 
     if (data != undefined) {
       req.session.id_usuario = data.id;
       req.session.nombre_usuario = data.usuario;
-
       res.redirect('/admin/opiniones');
     } else {
       res.render('admin/login', {

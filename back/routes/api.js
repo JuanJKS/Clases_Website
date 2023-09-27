@@ -1,14 +1,11 @@
-var express = require('express');
-var router = express.Router();
-var opinionesModel = require('./../models/opinionesModel');
+const express = require('express');
+const router = express.Router();
+const opinionesModel = require('./../models/opinionesModel');
 
-router.get('/opiniones', async function (req, res, next) {
+router.get('/opiniones', async (req, res, next) => {
     let opiniones = await opinionesModel.getOpiniones();
 
-    opiniones = opiniones.map(opiniones => {
-        return {...opiniones}
-    });
-
+    opiniones = opiniones.map(opiniones => ({...opiniones}));
     res.json(opiniones);
 });
 

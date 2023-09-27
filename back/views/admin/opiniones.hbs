@@ -5,7 +5,7 @@
             <h3 class='title'>Testimonios</h3>
         </div>
         <div class='col-5 text-end'>
-            <a class='btn btn-primary new' href='/admin/opiniones/agregar'><i class='fa fa-plus' aria-hidden='true'></i>Nuevo</a>
+            <a class='btn btn-primary new' href='/admin/opiniones/manage'><i class='fa fa-plus' aria-hidden='true'></i>Nuevo</a>
         </div>
     </div>
     {{! FIN FILA 1 }}
@@ -46,7 +46,7 @@
                             <th scope='row'>{{id_op}}</th>
                             <td>{{opinion}}</td>
                             <td class='container-icons'>
-                                <a class='btn btn-secondary' href='/admin/opiniones/modificar/{{id_op}}'><i class='fa-regular fa-pen-to-square' aria-hidden='true'></i></a>
+                                <a class='btn btn-secondary' href='/admin/opiniones/manage/{{id_op}}'><i class='fa-regular fa-pen-to-square' aria-hidden='true'></i></a>
                                 <a class='btn btn-secondary'><i onclick='showModal({{id_op}})' class='fa-regular fa-trash-can' aria-hidden='true'></i></a>
                             </td>
                         </tr>
