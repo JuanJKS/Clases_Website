@@ -15,7 +15,7 @@ services:
       - database
     networks:
       - default
-      - nginx-proxy-manager_default
+      - proxy_manager_default
 
   database:
     container_name: proyecto-clases_database
@@ -36,11 +36,11 @@ services:
     restart: unless-stopped
     networks:
       - default
-      - nginx-proxy-manager_default
+      - proxy_manager_default
 
 volumes:
   app_database:
 
 networks:
-  nginx-proxy-manager_default:
+  proxy_manager_default:
     external: true
